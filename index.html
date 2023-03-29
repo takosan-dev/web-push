@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Web Push Sample</title>
-    </head>
-    <body>
-        <h1>Web Push Sample #1</h1>
-    </body>
+<head>
+<title>Web Push Sample</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
+<script>
+function pushNotification() {
+    Push.create('ここはタイトル!', {
+        body: 'ボディっぽい',
+        icon: 'icon.png',
+        timeout: 5000,
+        onClick: function () {
+            this.close();
+            location.href = 'https://www.yahoo.co.jp';
+        }
+    });
+}
+</script>
+</head>
+<body>
+    <h1>Web Push Sample #1</h1>
+    <button type="ボタン" onClick="pushNotification()">ボタンだよ</button>
+</body>
 </html>
